@@ -21,8 +21,10 @@
 
 <?php
 include '../services/ver.php';
-
-foreach ($listaMesas as $mesa) {
+$query = $pdo->prepare("SELECT * FROM tbl_reserva");
+$query->execute();
+$data = $query->fetchAll();
+foreach ($data as $mesa) {
         ?>
         <tr>
         <td><?php echo"{$mesa['nombre_cliente']}";?></td>
@@ -31,9 +33,9 @@ foreach ($listaMesas as $mesa) {
         <td><?php echo"{$mesa['hora']}";?></td>
         <td><?php echo"{$mesa['num_personas']}";?></td>
         <?php
-        echo "<td><a type='button' class='btn btn-success'  href='modificar.user.form.php?id_reserva={$mesa['id_reserva']}&fecha={$mesa['fecha']}&hora={$mesa['hora']}&nombre_cliente={$mesa['nombre_cliente']}&telf_cliente={$mesa['telf_cliente']}&num_personas={$mesa['num_personas']}&id_mesa={$mesa['id_mesa']}'>Modificar</a></td>";
+        echo "<td><a type='button' class='btn btn-success'  href='modificar.reserva.form.php?id_reserva={$mesa['id_reserva']}&fecha={$mesa['fecha']}&hora={$mesa['hora']}&nombre_cliente={$mesa['nombre_cliente']}&telf_cliente={$mesa['telf_cliente']}&num_personas={$mesa['num_personas']}&id_mesa={$mesa['id_mesa']}'>Modificar</a></td>";
         ?>
-        <td><form METHOD='POST' action='../process/eliminar.user.php'>
+        <td><form METHOD='POST' action='../process/eliminar.reserva.php'>
             <input type='hidden' name='id' value=<?php echo"{$mesa['id_reserva']}";?>>
             <input type='submit' value='Borrar' class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar este evento?')">
         </form></td>

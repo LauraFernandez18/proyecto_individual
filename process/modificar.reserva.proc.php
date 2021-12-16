@@ -21,5 +21,5 @@ $id_reserva=$_POST['id_reserva'];
    
     $modificar->execute();
 
-    header('Location: ../view/usuarios.php');
+    header('Location: ../view/reservas.php');
     

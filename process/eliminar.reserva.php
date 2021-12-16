@@ -44,7 +44,7 @@ try {
             $del->execute();
 
             echo "<script> alert('borrado con exito')</script>";
-            echo"<script>window.location.replace('../view/usuarios.php')</script>";
+            echo"<script>window.location.replace('../view/reservas.php')</script>";
         }
     }
     catch (PDOException $e) {

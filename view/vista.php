@@ -18,7 +18,7 @@ include '../services/ver.php';
 echo "<a href='../process/logout.php' class='logout'>Logout</a>";
 echo "<h1>Reservas del restaurante</h1>";
 echo "<a type='button' class='btn btn-dark btn_filtro' href='../process/filtro.php' class='filtro'>Filtro</a>";
-echo "<a type='button' class='btn btn-dark btn_filtro' href='usuarios.php' class='filtro'>Usuarios</a>";
+echo "<a type='button' class='btn btn-dark btn_filtro' href='reservas.php' class='filtro'>Reservas</a>";
 echo "<a type='button' class='btn btn-dark btn_filtro' href='mesas.php' class='filtro'>Mesas</a>";
 echo "<a type='button' class='btn btn-dark btn_filtro' href='salas.php' class='filtro'>Salas</a>";
 echo "<form action='vista.php' method='post'>
