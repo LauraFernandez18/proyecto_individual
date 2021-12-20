@@ -5,7 +5,6 @@ $nom_user=$_POST['nom_user'];
 $apellido_user=$_POST['apellido_user'];
 $email_user=$_POST['email_user'];
 $password_user=$_POST['password_user'];
-$rol_user=$_POST['rol_user'];
 $id_user=$_POST['id_user'];
 
     $modificar = $pdo->prepare("UPDATE tbl_users
