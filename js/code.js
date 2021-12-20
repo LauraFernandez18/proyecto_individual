@@ -71,7 +71,7 @@ function validar_user() {
     nom_user = document.getElementById('nom_user').value
     apellido_user = document.getElementById('apellido_user').value
     email_user = document.getElementById('email_user').value
-    rol_user = document.getElementById('rol_user').value
+    password_user = document.getElementById('password_user').value
     mensaje = document.getElementById('mensaje')
 
     if (nom_user == '' || apellido_user == '' || email_user == '' || rol_user == '') {
@@ -86,8 +86,8 @@ function validar_user() {
     } else if (email_user == '') {
         mensaje.innerHTML = 'Introduce el email'
         return false
-    } else if (rol_user == '') {
-        mensaje.innerHTML = 'Introduce el rol'
+    } else if (password_user == '') {
+        mensaje.innerHTML = 'Introduce el email'
         return false
     } else {
         return true

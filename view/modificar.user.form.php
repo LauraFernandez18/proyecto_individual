@@ -33,7 +33,6 @@ if (!(isset($_SESSION['email_user']))){
         <input type="password" name="password_user" id='password_user' value="<?php echo $_GET['password_user'] ?>">
         <br></br>
         <input type="hidden" name="id_user" value="<?php echo $_GET['id_user'] ?>">
-        <input type="hidden" name="rol_user" value="<?php echo $_GET['rol_user'] ?>">
         <input type="submit" value="Modificar" class="btn btn-dark">
 </div>
 </form>
