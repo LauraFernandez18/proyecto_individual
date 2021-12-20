@@ -17,7 +17,7 @@ if (!(isset($_SESSION['email_user']))){
     <title>Modificar mesa</title>
 </head>
 <body class="cuerpo">
-<form action="../process/modificar.mesa.proc.php" class="caja" method="post" enctype="multipart/form-data" onsubmit="return validar_generar_modificar();">
+<form action="../process/modificar.mesa.proc.php" class="caja" method="post" enctype="multipart/form-data" onsubmit="return validar_mesa();">
         <h2>Modificar mesa</h2>
         <div class=alert id='mensaje'></div>
         <p>Nombre mesa</p>
