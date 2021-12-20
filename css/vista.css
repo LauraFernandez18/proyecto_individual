@@ -61,3 +61,8 @@ p {
 .btn {
     font-family: 'Zen Antique', serif;
 }
+
+.column img {
+    width: 120px;
+    height: 120px;
+}

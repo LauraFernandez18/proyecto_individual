@@ -15,13 +15,14 @@
                     <th>Fecha</th>
                     <th>Hora</th>
                     <th>Personas</th>
+                    <th>Mesa</th>
                     <th>Modificar</th>
                     <th>Eliminar</th>
                 </tr>
 
 <?php
 include '../services/ver.php';
-$query = $pdo->prepare("SELECT * FROM tbl_reserva");
+$query = $pdo->prepare("SELECT * FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_reserva.id_mesa = tbl_mesa.id_mesa");
 $query->execute();
 $data = $query->fetchAll();
 foreach ($data as $mesa) {
@@ -32,6 +33,7 @@ foreach ($data as $mesa) {
         <td><?php echo"{$mesa['fecha']}";?></td>
         <td><?php echo"{$mesa['hora']}";?></td>
         <td><?php echo"{$mesa['num_personas']}";?></td>
+        <td><?php echo"{$mesa['nombre_mesa']}";?></td>
         <?php
         echo "<td><a type='button' class='btn btn-success'  href='modificar.reserva.form.php?id_reserva={$mesa['id_reserva']}&fecha={$mesa['fecha']}&hora={$mesa['hora']}&nombre_cliente={$mesa['nombre_cliente']}&telf_cliente={$mesa['telf_cliente']}&num_personas={$mesa['num_personas']}&id_mesa={$mesa['id_mesa']}'>Modificar</a></td>";
         ?>
