@@ -19,8 +19,7 @@ try {
    
     $modreserva->execute();
 
-    header('Location: ../view/vista.php');
-    
+    echo"<script>window.location.replace('../view/vista.admin.php')</script>";    
 }
 catch (PDOException $e) {
     echo "Error : " . $e->getMessage();

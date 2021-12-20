@@ -6,12 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="../css/modificar_generar.css">
-        <script type="text/javascript" src="../js/code.js"></script>
+        <script type="text/javascript" src="../js/filtro.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
 </head>
 <body>
-   <form action="filtropdo.php" class="caja" method="post"  onsubmit="return validar_filtro()">
+   <form action="filtropdo.php" class="caja" method="post"  onsubmit="return validar()">
         <h2>Filtros</h2><br>
         <div class=alert id='mensaje'></div>
         <p>Filtrar por:</p>
@@ -20,9 +20,9 @@
         $query = $pdo->prepare("SELECT * FROM tbl_ubicacion");
         $query->execute();
         $data = $query->fetchAll();
-        foreach ($data as $ubi) {
+        foreach ($data as $valores){
         ?>
-        <p><?php echo $ubi['tipo_ubi']?> <input type="radio" id='terraza' name="id_ubi" value=<?php echo $ubi['id_ubi'] ?>></p>
+        <p><?php echo $valores['tipo_ubi']?><input type="radio" id='id_ubi' name="id_ubi" value="<?php echo $valores['tipo_ubi']?>"></p>
         <?php
         }
         ?>

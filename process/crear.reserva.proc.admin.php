@@ -1,4 +1,4 @@
-<!--PROCESO PARA CREAR RESERVA CAMARERO-->
+<!--PROCESO PARA CREAR RESERVA ADMIN-->
 
 <?php
 include '../services/config.php';
@@ -89,7 +89,7 @@ try {
 
 
     echo "<script> alert('Reserva creada con éxito!')</script>";
-    echo"<script>window.location.replace('../view/vista.php')</script>";
+    echo"<script>window.location.replace('../view/vista.admin.php')</script>";
 
 
 }

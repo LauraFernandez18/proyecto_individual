@@ -1,3 +1,5 @@
+/* CSS DE LAS PÁGINAS DE CREAR Y MODIFICAR */
+
 @import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
 * {
     box-sizing: border-box;
@@ -13,6 +15,8 @@ body {
     height: 100%;
 }
 
+/* caja que contiene los inputs */
+
 .caja {
     position: absolute;
     top: 50%;
@@ -25,6 +29,8 @@ body {
     border-radius: 5px;
     box-shadow: 2px 2px 10px #666;
 }
+
+/* modificar inputs */
 
 .caja input[name='num_personas'],
 .caja input[name='telf_cliente'],
@@ -58,6 +64,8 @@ p {
 .btn {
     font-family: 'Zen Antique', serif;
 }
+
+/* mensaje js */
 
 #mensaje {
     color: rgb(124, 123, 123);

@@ -1,10 +1,8 @@
 <?php
-include '../services/ver.php';
 session_start();
 if (!(isset($_SESSION['email_user']))){
         echo"<script>window.location.replace('../view/login.php')</script>";
     }
-?>
 ?>
 
 <!DOCTYPE html>
@@ -16,18 +14,27 @@ if (!(isset($_SESSION['email_user']))){
     <script type="text/javascript" src="../js/code.js"></script>
     <link rel="stylesheet" href="../css/modificar_generar.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Crear sala</title>
+    <title>Crear usuario</title>
 </head>
 <body>
-<form action="../process/crear.sala.proc.php" method="post" class="caja" enctype="multipart/form-data"  onsubmit="return validar_sala();">
-        <h2>Crear sala</h2>
+<form action="../process/crear.user.pdo.php" method="post" class="caja" onsubmit="return validar_user();">
+        <h2>Crear usuario</h2>
         <div class=alert id='mensaje'></div>
-        <p>Nombre sala</p>
-        <input type="text" name="tipo_ubi" id='tipo_ubi'>
+        <p>Nombre</p>
+        <input type="text" name="nom_user" id='nom_user'>
+        <p>Apellido</p>
+        <input type="text" name="apellido_user" id='apellido_user'>
         <br>
-        <p>Añadir imagen</p>
-        <input type="file" name="foto_ubi" id='foto_ubi'>
-        <input type="hidden" name="id_ubi" id='id_ubi' value="<?php echo $_GET['id_ubi']?>">
+        <p>Email</p>
+        <input type="email" name="email_user" id='email_user'>
+        <p>Password</p>
+        <input type="password" name="password_user" id='password_user'>
+        <p>Rol</p>
+        <select name="rol_user" id="rol_user">
+            <option value="Camarero">Camarero</option>
+            <option value="Admin">Admin</option>
+        </select>
+        <input type="hidden" name="id_user" value="<?php echo $_GET['id_user'] ?>">
         <br>
         <input type="submit" value="Crear" class="btn btn-dark">
 </form>

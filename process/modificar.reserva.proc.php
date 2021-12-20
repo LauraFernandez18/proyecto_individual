@@ -21,5 +21,6 @@ $id_reserva=$_POST['id_reserva'];
    
     $modificar->execute();
 
-    header('Location: ../view/reservas.php');
+    echo "<script> alert('Reserva modificada con éxito!')</script>";
+    echo"<script>window.location.replace('../view/reservas.php')</script>";
     

@@ -1,3 +1,5 @@
+<!--PROCESO PARA ELIMINAR RESERVA-->
+
 <?php
 include '../services/config.php';
 include '../services/conexion.php';
@@ -8,7 +10,6 @@ $id = $_POST['id'];
 $fecha_actual=date("Y-m-d H:i:s", time());
 
 
-// Bind
 try {
     $fin_reserva = $pdo->prepare("UPDATE tbl_reserva
     SET tbl_reserva.fecha = ?
@@ -43,7 +44,7 @@ try {
             $del->bindParam(1, $id);
             $del->execute();
 
-            echo "<script> alert('borrado con exito')</script>";
+            echo "<script> alert('Reserva eliminada con éxito')</script>";
             echo"<script>window.location.replace('../view/reservas.php')</script>";
         }
     }

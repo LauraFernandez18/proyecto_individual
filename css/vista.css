@@ -1,3 +1,5 @@
+/* CSS DE VISTA PRINCIPAL */
+
 @import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
 * {
@@ -13,6 +15,8 @@
 body {
     background: linear-gradient(-45deg, #df74e2, #89c7eb);
 }
+
+/* enlace de logout */
 
 .logout {
     position: center;
@@ -31,6 +35,8 @@ h1 {
     color: white;
     font-family: 'Carter One';
 }
+
+/* editamos las tablas (cada mesa es una tabla) */
 
 table {
     background-color: white;
@@ -58,6 +64,25 @@ p {
     color: rgb(83, 82, 82);
 }
 
+/* modificar botones */
+
 .btn {
     font-family: 'Zen Antique', serif;
+    margin: 2px;
+    position: left;
+    text-align: center;
+}
+
+input {
+    margin-top: 10px;
+    float: left;
+}
+
+
+
+/* tamaño de la imagen de la tabla */
+
+.column img {
+    width: 120px;
+    height: 120px;
 }
