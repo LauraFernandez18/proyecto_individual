@@ -27,7 +27,6 @@ if (!(isset($_SESSION['email_user']))){
                     <th>Hora</th>
                     <th>Personas</th>
                     <th>Mesa</th>
-                    <th>Modificar</th>
                     <th>Eliminar</th>
                 </tr>
 
@@ -47,10 +46,6 @@ foreach ($data as $mesa) {
         <td><?php echo"{$mesa['hora']}";?></td>
         <td><?php echo"{$mesa['num_personas']}";?></td>
         <td><?php echo"{$mesa['nombre_mesa']}";?></td>
-        <?php
-        //boton modificar
-        echo "<td><a type='button' class='btn btn-success'  href='modificar.reserva.form.php?id_reserva={$mesa['id_reserva']}&fecha={$mesa['fecha']}&hora={$mesa['hora']}&nombre_cliente={$mesa['nombre_cliente']}&telf_cliente={$mesa['telf_cliente']}&num_personas={$mesa['num_personas']}&id_mesa={$mesa['id_mesa']}&nombre_mesa={$mesa['nombre_mesa']}'>Modificar</a></td>";
-        ?>
         <!-- boton eliminar -->
         <td><form METHOD='POST' action='../process/eliminar.reserva.php'>
             <input type='hidden' name='id' value=<?php echo"{$mesa['id_reserva']}";?>>

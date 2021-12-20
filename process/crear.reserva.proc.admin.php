@@ -34,23 +34,23 @@ $revisar_reserva=$revisar_reserva->fetchAll(PDO::FETCH_ASSOC);
 
 //sentencias para revisar que la hora anterior y la de después no están ocupadas
 
-$hora2=$pdo->prepare("SELECT r.id_reserva,r.fecha,r.hora, r.nombre_cliente, r.telf_cliente, r.num_personas, m.id_mesa
+$hora1=$pdo->prepare("SELECT r.id_reserva,r.fecha,r.hora, r.nombre_cliente, r.telf_cliente, r.num_personas, m.id_mesa
 FROM tbl_reserva r 
 INNER JOIN tbl_mesa m ON r.id_mesa = m.id_mesa
 WHERE r.id_mesa = '$id_mesa' AND r.fecha = '$fecha' AND r.hora = '$hora_antes'");
-$hora2->execute();
-$reserva2=$hora2->fetchAll(PDO::FETCH_ASSOC); 
+$hora1->execute();
+$reserva1=$hora1->fetchAll(PDO::FETCH_ASSOC); 
 
-$hora3=$pdo->prepare("SELECT r.id_reserva,r.fecha,r.hora, r.nombre_cliente, r.telf_cliente, r.num_personas, m.id_mesa
+$hora2=$pdo->prepare("SELECT r.id_reserva,r.fecha,r.hora, r.nombre_cliente, r.telf_cliente, r.num_personas, m.id_mesa
 FROM tbl_reserva r 
 INNER JOIN tbl_mesa m ON r.id_mesa = m.id_mesa
 WHERE r.id_mesa = '$id_mesa' AND r.fecha = '$fecha' AND r.hora = '$hora_desp'");
-$hora3->execute();
-$reserva3=$hora3->fetchAll(PDO::FETCH_ASSOC); 
+$hora2->execute();
+$reserva2=$hora2->fetchAll(PDO::FETCH_ASSOC); 
 
 //en caso de que la hora no esté disponible
 
-if(!empty($reserva1) || ($reserva2) || ($reserva3)){
+if(!empty($reserva1) || ($reserva2)){
     echo "<script> alert('Hora no disponible')</script>";
     echo"<script>window.history.back();</script>";
 } else {
