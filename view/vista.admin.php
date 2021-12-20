@@ -1,13 +1,9 @@
-<!-- VISTA DE ADMIN -->
-
 <?php
+include '../services/ver.php';
 session_start();
 if (!(isset($_SESSION['email_user']))){
         echo"<script>window.location.replace('../view/login.php')</script>";
     }
-
-include '../services/ver.php';
-
 ?>
 
 <!DOCTYPE html>
