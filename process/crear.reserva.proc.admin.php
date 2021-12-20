@@ -21,13 +21,12 @@ $hora_desp=strtotime('+1 hour',strtotime($hora));
 $hora_desp = date('H:i',$hora_desp);
 
 
-    /* sentencia que revisa si la mesa está disponible en la fecha seleccionada */
-    $revisar_reserva = $pdo->prepare("SELECT * from tbl_reserva WHERE fecha='$fecha' and hora='$hora' and id_mesa='$id_mesa'");
-    $revisar_reserva->execute();
-    $revisar_reserva=$revisar_reserva->fetchAll(PDO::FETCH_ASSOC);
+/* sentencia que revisa si la mesa está disponible en la fecha seleccionada */
+$revisar_reserva = $pdo->prepare("SELECT * from tbl_reserva WHERE fecha='$fecha' and hora='$hora' and id_mesa='$id_mesa'");
+$revisar_reserva->execute();
+$revisar_reserva=$revisar_reserva->fetchAll(PDO::FETCH_ASSOC);
 
     /*en caso de que esté ocupada no generá la reserva */
-
     if(!empty($revisar_reserva)) {
         echo "<script> alert('Reserva ocupada')</script>";
         echo"<script>history.back('../biew/crear.reserva.form.php')</script>";
@@ -35,26 +34,19 @@ $hora_desp = date('H:i',$hora_desp);
 
 //sentencias para revisar que la hora anterior y la de después no están ocupadas
 
-$stmt1=$pdo->prepare("SELECT r.id_reserva,r.fecha,r.hora, r.nombre_cliente, r.telf_cliente, r.num_personas, m.id_mesa
-FROM tbl_reserva r 
-INNER JOIN tbl_mesa m ON r.id_mesa = m.id_mesa
-WHERE r.id_mesa = '$id_mesa' AND r.fecha = '$fecha' AND r.hora = '$hora'");
-$stmt1->execute();
-$reserva1=$stmt1->fetchAll(PDO::FETCH_ASSOC);
-
-$stmt2=$pdo->prepare("SELECT r.id_reserva,r.fecha,r.hora, r.nombre_cliente, r.telf_cliente, r.num_personas, m.id_mesa
+$hora2=$pdo->prepare("SELECT r.id_reserva,r.fecha,r.hora, r.nombre_cliente, r.telf_cliente, r.num_personas, m.id_mesa
 FROM tbl_reserva r 
 INNER JOIN tbl_mesa m ON r.id_mesa = m.id_mesa
 WHERE r.id_mesa = '$id_mesa' AND r.fecha = '$fecha' AND r.hora = '$hora_antes'");
-$stmt2->execute();
-$reserva2=$stmt2->fetchAll(PDO::FETCH_ASSOC); 
+$hora2->execute();
+$reserva2=$hora2->fetchAll(PDO::FETCH_ASSOC); 
 
-$stmt3=$pdo->prepare("SELECT r.id_reserva,r.fecha,r.hora, r.nombre_cliente, r.telf_cliente, r.num_personas, m.id_mesa
+$hora3=$pdo->prepare("SELECT r.id_reserva,r.fecha,r.hora, r.nombre_cliente, r.telf_cliente, r.num_personas, m.id_mesa
 FROM tbl_reserva r 
 INNER JOIN tbl_mesa m ON r.id_mesa = m.id_mesa
 WHERE r.id_mesa = '$id_mesa' AND r.fecha = '$fecha' AND r.hora = '$hora_desp'");
-$stmt3->execute();
-$reserva3=$stmt3->fetchAll(PDO::FETCH_ASSOC); 
+$hora3->execute();
+$reserva3=$hora3->fetchAll(PDO::FETCH_ASSOC); 
 
 //en caso de que la hora no esté disponible
 

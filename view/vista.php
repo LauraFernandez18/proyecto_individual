@@ -46,7 +46,7 @@ $query = $pdo->prepare("SELECT * FROM tbl_ubicacion");
         //con un foreach mostraremos todas las ubicaciones disponibles
         //se creará un botón por cada ubicación disponible
         foreach ($data as $valores){
-?>e
+?>
 <form action='vista.php' method='post'>
 <div class="tabla_botones">
         <input type='submit' name='filtre' class='btn btn-dark btn_salas' value="<?php echo $valores['tipo_ubi']?>">

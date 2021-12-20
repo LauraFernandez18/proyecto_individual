@@ -24,6 +24,7 @@ if ($cuenta == 1) {
     $_SESSION['email_user']=$email_user;
 
     if ($user['rol_user'] == "Admin") {
+        $_SESSION['admin']="1";
         echo"<script>window.location.replace('../view/vista.admin.php')</script>";
     } else {
         echo"<script>window.location.replace('../view/vista.php')</script>";

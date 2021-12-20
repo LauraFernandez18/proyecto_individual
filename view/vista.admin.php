@@ -1,7 +1,7 @@
 <?php
 include '../services/ver.php';
 session_start();
-if (!(isset($_SESSION['email_user']))){
+if (!(isset($_SESSION['admin']))){
         echo"<script>window.location.replace('../view/login.php')</script>";
     }
 ?>
