@@ -10,7 +10,7 @@
     <title>Modificar</title>
 </head>
 <body>
-<form action="generarpdo.php?id_mesa=<?php echo $_GET['id']; ?>" method="post" class="caja" onsubmit="return validar_generar_modificar();">
+<form action="generarpdo.php" method="post" class="caja" onsubmit="return validar_generar_modificar();">
         <h2>Generar</h2>
         <div class=alert id='mensaje'></div>
         <p>Numero de personas en la reserva</p>
@@ -23,24 +23,14 @@
         <input type="text" name="telf_cliente" id='telf_cliente'>
         <br>
         <p>Introduce la fecha</p>
-        <input type="date" name="fecha" id='fecha' min="<?php echo date("Y-m-d");?>">
+        <input type="date" name="fecha" id='fecha'>
         <br>
         <p>Introduce la hora</p>
         <input type="time" min="08:00" max="23:00" step="3600" name="hora" id='hora'>
-                </div>
         <br>
         <input type="hidden" name="id_mesa" value="<?php echo $_GET['id'] ?>">
         <br>
         <input type="submit" value="Generar reserva" class="btn btn-dark">
 </form>
-<?php
-                    if(isset($_GET["error"])){
-                    ?>
-                        <script>
-                            document.getElementById('mensaje').innerHTML = "<p>Aquesta hora ja está reservada</p>";
-                        </script>
-                    <?php
-                    }
-                    ?>
 </body>
 </html>

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="../js/code.js"></script>
-    <link rel="stylesheet" href="../css/modificar_generar.css">
+    <script type="text/javascript" src="../js/modificar_generar.js"></script>
+    <link rel="stylesheet" href="../css/code.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Modificar</title>
 </head>
 <body>
-<form action="../process/crear.mesa.pdo.php" method="post" class="caja" onsubmit="return validar_mesa();">
+<form action="../process/crear.mesa.pdo.php" method="post" class="caja" onsubmit="return validar_generar_modificar();">
         <h2>Crear mesa</h2>
         <div class=alert id='mensaje'></div>
         <p>Nombre mesa</p>
