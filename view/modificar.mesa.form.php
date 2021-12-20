@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/modificar_generar.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script type="text/javascript" src="../js/code.js"></script>    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Modificar mesa</title>
 </head>
 <body class="cuerpo">
-<form action="../process/modificar.mesa.proc.php" class="caja" method="post" enctype="multipart/form-data" onsubmit="return validar_generar_modificar();">
+<form action="../process/modificar.mesa.proc.php" method="post" enctype="multipart/form-data" onsubmit="return validar_generar_modificar();">
         <h2>Modificar mesa</h2>
         <div class=alert id='mensaje'></div>
         <p>Nombre mesa</p>

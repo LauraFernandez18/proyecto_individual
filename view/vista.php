@@ -39,23 +39,10 @@ $query = $pdo->prepare("SELECT * FROM tbl_ubicacion");
 echo "<div></div>";
 
 foreach ($listaMesas as $mesa) {
-        echo "<table class='column'>";
-        echo "<tr>";
-        echo "<td><h3>{$mesa['nombre_mesa']}</h3></td>";
-        echo "</tr>";
-
-        echo "<tr>";
-        echo "<td><img src='../img/{$mesa['foto_ubi']}'></td>";
-        echo "</tr>";
         
-        echo "<tr>";
-        echo "<td><p>{$mesa['tipo_ubi']}</p></td>";
-        echo "</tr>";
+        include 'vistacomun.php';
 
         echo "<tr>";
-        echo "<td><p>Nº Sillas {$mesa['num_silla_dispo']}</p></td>";
-        echo "</tr>";
-
         echo "<td><a type='button' class='btn btn-dark' href='../process/generarform.php?id={$mesa['id_mesa']}&nsillas={$mesa['num_silla_dispo']}'>Generar reserva</a></td>";
         echo "</tr>";
         ?>

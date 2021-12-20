@@ -17,29 +17,6 @@ function validar_login() {
     }
 }
 
-function validar_mesa() {
-    nombre_mesa = document.getElementById('nombre_mesa').value
-    num_silla_dispo = document.getElementById('num_silla_dispo').value
-    id_ubi = document.getElementById('id_ubi').value
-    mensaje = document.getElementById('mensaje')
-
-    if (nombre_mesa == '' || num_silla_dispo == '' || id_ubi == '') {
-        mensaje.innerHTML = 'Rellena los campos'
-        return false
-    } else if (nombre_mesa == '') {
-        mensaje.innerHTML = 'Introduce el nombre de la mesa'
-        return false
-    } else if (num_silla_dispo == '') {
-        mensaje.innerHTML = 'Introduce el número de las sillas'
-        return false
-    } else if (id_ubi == '') {
-        mensaje.innerHTML = 'Introduce la ubicación'
-        return false
-    } else {
-        return true
-    }
-}
-
 function validar_generar_modificar() {
     num_personas = document.getElementById('num_personas').value
     nombre_cliente = document.getElementById('nombre_cliente').value
