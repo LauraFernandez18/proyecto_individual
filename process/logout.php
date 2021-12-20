@@ -1,4 +1,4 @@
 <?php
 session_start();
 session_destroy();
-header("location: ../view/login.php");
+echo"<script>window.location.replace('../view/login.php')</script>";

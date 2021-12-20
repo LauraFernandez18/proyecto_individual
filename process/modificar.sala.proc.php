@@ -25,5 +25,6 @@ if (move_uploaded_file($_FILES["foto_ubi"]["tmp_name"], $target_file)) {
 
     $modificar->execute();
 
-    header('Location: ../view/salas.php');
+    echo "<script> alert('Modificación realizada con éxito')</script>";
+    echo"<script>window.location.replace('../view/salas.php')</script>";
     

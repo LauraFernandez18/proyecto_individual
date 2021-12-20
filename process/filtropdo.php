@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!(isset($_SESSION['email_user']))){
+        echo"<script>window.location.replace('../view/login.php')</script>";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

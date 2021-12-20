@@ -19,13 +19,14 @@
     <img src="../img/icon.png" class= "avatar"></img>
         <h1>Login</h1><br>
         <div class=alert id='mensaje'><?php
+        //validacion user y contraseña incorrectos
         if (isset($_SESSION['error'])){
             echo "<p>Usuario y/o contraseña incorrectos<p>";
         }
         session_destroy();
         ?></div>
         <form class="caja" action='../process/login.proc.php' method='POST' onsubmit="return validar_login()">
-        <input type='nom_user' name='nom_user' id='nom_user' placeholder="Username"/><br><br>
+        <input type='email_user' name='email_user' id='email_user' placeholder="Email"/><br><br>
         <input type='password' name='password_user' id='password_user' placeholder="Contraseña"/><br><br>
         <INPUT TYPE='SUBMIT' NAME='crear' VALUE='Iniciar sesión' class="btn btn-dark btn_login">
 </input>

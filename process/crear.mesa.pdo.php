@@ -1,3 +1,5 @@
+<!--PROCESO PARA CREAR MESA-->
+
 <?php
 include '../services/ver.php';
 
@@ -5,7 +7,7 @@ $nombre_mesa=$_POST['nombre_mesa'];
 $num_silla_dispo=$_POST['num_silla_dispo'];
 $id_ubi=$_POST['id_ubi'];
 
-    //INSERTAR RESERVA
+    //INSERTAR MESA
     $crear_mesa = $pdo->prepare("INSERT INTO tbl_mesa (nombre_mesa,num_silla_dispo,id_ubi)
     VALUES ( ?, ?, ?)");
     
@@ -15,6 +17,7 @@ $id_ubi=$_POST['id_ubi'];
     
     $crear_mesa->execute();
 
-    header('Location: ../view/mesas.php');
+    echo "<script> alert('Mesa creada con éxito!')</script>";
+    echo"<script>window.location.replace('../view/mesas.php')</script>";
 
 ?>

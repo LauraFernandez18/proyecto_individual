@@ -1,0 +1,59 @@
+/* CSS DE LAS TABLAS DE RESERVAS, USUARIOS, MESAS Y SALAS */
+
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
+body {
+    background: linear-gradient(-45deg, #df74e2, #89c7eb);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Carter One';
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.btn_crear {
+    margin-left: 1%;
+}
+
+/* div tabla */
+
+.tabla {
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 100%;
+}
+
+/* editamos la tabla */
+
+.table {
+    background-color: white;
+}
+
+.table img {
+    width: 20%;
+}
+
+.table th {
+    text-align: center;
+    font-weight: bold;
+    width: 10%;
+}
+
+.table tr:hover {
+    background-color: rgb(237, 198, 246);
+    cursor: pointer;
+}
+
+.table td {
+    text-align: center;
+    width: 10%;
+}

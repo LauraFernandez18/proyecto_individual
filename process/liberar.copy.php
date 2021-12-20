@@ -35,7 +35,7 @@ try {
     $mesa0->execute();
     //Fetch your records and display.
 
-    header('Location: ../view/vista.php');
+    echo"<script>window.location.replace('../view/vista.admin.php')</script>";
 
 }
 catch (PDOException $e) {

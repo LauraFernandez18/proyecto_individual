@@ -19,5 +19,5 @@ $id_mesa=$_POST['id_mesa'];
     $modificar->execute();
 
     echo "<script> alert('Mesa modificada con éxito!')</script>";
-    echo"<script>window.location.replace('../view/vista.php')</script>";
+    echo"<script>window.location.replace('../view/vista.admin.php')</script>";
     
