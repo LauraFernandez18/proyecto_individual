@@ -44,7 +44,7 @@ foreach ($listaMesas as $mesa) {
         <td><?php echo"{$mesa['tipo_ubi']}";?></td>
         <?php
         //boton de modificar
-        echo "<td><a type='button' class='btn btn-dark'  href='modificar.mesa.form.php?id_mesa={$mesa['id_mesa']}&nombre_mesa={$mesa['nombre_mesa']}&num_silla_dispo={$mesa['num_silla_dispo']}&reservada={$mesa['reservada']}&id_ubi={$mesa['id_ubi']}'>Modificar</a></td>";
+        echo "<td><a type='button' class='btn btn-dark'  href='modificar.mesa.form.admin.php?id_mesa={$mesa['id_mesa']}&nombre_mesa={$mesa['nombre_mesa']}&num_silla_dispo={$mesa['num_silla_dispo']}&reservada={$mesa['reservada']}&id_ubi={$mesa['id_ubi']}'>Modificar</a></td>";
 
         ?>
         <!-- boton de eliminar-->
